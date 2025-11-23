@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Environment Variables (SECRETS)
+.env
+.env.local
+
+# Data Lake & Databases (Local)
+*.duckdb
+*.parquet
+*.json
+data_lake/
+minio_data/
+
+# IDE
+.vscode/
+.idea/
+
+# dbt
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
