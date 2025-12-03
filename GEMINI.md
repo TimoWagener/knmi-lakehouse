@@ -80,4 +80,8 @@ uv run ruff check .
 
 ## Current Status (as of Dec 3, 2025)
 *   **Completed:** Project init, `uv` setup, MinIO/Dagster infra, Station Discovery (`metadata.py`), Landing Zone Ingestion (`ingestion.py`).
+*   **Verified:** 
+    *   Dagster Daemon & Sensors operational.
+    *   Dynamic Partitions population.
+    *   Partial backfill (Landing Zone) successfully tested.
 *   **Next Steps:** Implement Bronze Layer (`src/assets/bronze.py`) to convert JSON to Iceberg.

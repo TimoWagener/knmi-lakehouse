@@ -135,7 +135,10 @@ AWS_SECRET_ACCESS_KEY="password" # Updated to ... in local
 *   **API:** Verified `hourly-in-situ` collection and Long WIGOS IDs (`tests/manual_verification.py`).
 *   **Ingestion:** Verified 10-year hourly fetch for De Bilt (`tests/test_hourly_10yr.py`).
 
-### Phase 2: Dagster Architecture (Verified 2025-11-24)
+### Phase 2: Dagster Architecture (Verified 2025-12-03)
 *   **Docker:** Setup pure SQLite architecture (No Postgres).
 *   **Definitions:** `src/definitions.py` implemented.
-*   **Verification:** Created `tests/verify_dagster_defs.py` to be run in Step 5.
+*   **Verification:** 
+    *   Created and verified `tests/verify_dagster_defs.py`.
+    *   Verified Dynamic Partitions population mechanism.
+    *   Successfully ran partial backfill for 3 stations (Nov 2025).
