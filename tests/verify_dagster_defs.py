@@ -19,17 +19,17 @@ def verify_defs():
         return
 
     # 1. Check Assets
-    assets = list(defs.get_asset_graph().assets)
-    print(f"✅ Found {len(assets)} assets.")
+    asset_specs = defs.resolve_all_asset_specs()
+    print(f"✅ Found {len(asset_specs)} assets.")
     
-    asset_names = [key.to_user_string() for key in assets]
+    asset_names = [asset_spec.key.to_user_string() for asset_spec in asset_specs]
     print(f"   Assets: {asset_names}")
     
     if "raw_stations_list" not in asset_names:
         print(f"❌ Missing 'raw_stations_list'")
     
-    if "ingestion/knmi_hourly_observations" not in asset_names:
-        print(f"❌ Missing 'ingestion/knmi_hourly_observations'")
+    if "knmi_hourly_observations" not in asset_names:
+        print(f"❌ Missing 'knmi_hourly_observations'")
         
     # 2. Check Sensors
     sensors = list(defs.sensors)
@@ -39,7 +39,7 @@ def verify_defs():
         
     # 3. Check Partitions (Tricky without full context, but we can check the AssetNode)
     # Find the ingestion asset node
-    ingestion_node = next(a for a in assets if a.key.to_user_string() == "ingestion/knmi_hourly_observations")
+    ingestion_node = next(a for a in asset_specs if a.key.to_user_string() == "knmi_hourly_observations")
     if ingestion_node.partitions_def:
         print(f"✅ Ingestion asset has partitions: {ingestion_node.partitions_def}")
     else:
