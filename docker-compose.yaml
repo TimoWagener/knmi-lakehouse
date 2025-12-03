@@ -44,6 +44,7 @@ services:
       - lakehouse_net
     volumes:
       - ./src:/app/src       # Hot-reloading
+      - ./tests:/app/tests     # For executing test scripts inside container
       - dagster_home:/app/dagster_home # Shared System Storage
 
   # -------------------------------------------
