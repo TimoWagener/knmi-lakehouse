@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+
+# Python
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.python-version
+.pytest_cache
+.ruff_cache
+
+# Data / Local Storage
+minio_data
+dagster_home
+
+# Environment
+.env
+.env.local
+
+# IDEs
+.vscode
+.idea
