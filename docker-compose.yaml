@@ -51,7 +51,7 @@ services:
   # -------------------------------------------
   dagster_daemon:
     build: .
-    command: dagster-daemon run
+    command: dagster-daemon run -m src.definitions
     environment:
       # MinIO Overrides for Docker Network
       ENDPOINT_URL: "http://minio:9000"
